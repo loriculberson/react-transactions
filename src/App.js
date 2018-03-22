@@ -5,6 +5,11 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      newTransaction: {
+        name: '',
+        amount: '',
+        transaction: ''
+      },
       currentBalance: 100.01,
       transactions: [
         {
@@ -37,8 +42,7 @@ class App extends Component {
      this.state.transactions.map(transaction => 
      
       <div key={transaction.id} className= {'transactions'}>
-        {transaction.name} 
-        {transaction.amount}
+        {transaction.transactionType} gi{transaction.name} {transaction.amount}
       </div>
     )
   
@@ -54,7 +58,11 @@ class App extends Component {
           <h3> The Account Balance is: ${this.state.currentBalance} </h3>
           <div className="newTransactions">
             <label>
-              Transaction
+              Name:
+              <input />
+            </label>
+            <label>
+              Amount:
               <input />
             </label>
             </div>
