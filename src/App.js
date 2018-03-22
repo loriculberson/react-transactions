@@ -66,7 +66,7 @@ class App extends Component {
     let transactions = this.state.transactions.slice();
 
     newTransaction.transactionType = event.target.className;
-    newTransaction.id = transactions.length;
+    newTransaction.id = transactions.length + 1;
 
     transactions.push(newTransaction);
 
@@ -107,19 +107,12 @@ class App extends Component {
             <h3> The Account Balance is: ${this.state.currentBalance.toFixed(2)} </h3>
             < NewTransaction 
               name={this.state.newTransaction.name} 
-              value={this.state.newTransaction.value}
+              amount={this.state.newTransaction.amount}
               handleName={this.handleName}
               handleAmount={this.handleAmount}
+              transactionClick={this.transactionClick}
             />
-            <button 
-              onClick={this.transactionClick} 
-              className="debit">
-              Debit
-            </button>
-            <button 
-              onClick={this.transactionClick} 
-              className="deposit">
-              Deposit</button>
+    
             {renderTransactions}
           </div>
         </div>

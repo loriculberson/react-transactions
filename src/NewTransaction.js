@@ -18,6 +18,16 @@ const NewTransaction = (props) => {
           onChange={props.handleAmount}
         />
       </label>
+      <button 
+              onClick={props.transactionClick} 
+              className="debit">
+              Debit
+            </button>
+            <button 
+              onClick={props.transactionClick} 
+              className="deposit">
+              Deposit
+              </button>
     </div>
   )
 
