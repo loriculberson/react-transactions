@@ -1,6 +1,6 @@
 import React from 'react';
-import TransationInput from './TransactionInput';
 import TransactionInput from './TransactionInput';
+import Button from './Button';
 
 const NewTransaction = (props) => {  
 // const NewTransaction = ({name, amount, handleName, handleAmount, transactionClick}) => {  
@@ -20,16 +20,18 @@ const NewTransaction = (props) => {
         stateHandler={props.handleAmount}
         type={"text"}
       />
-      <button 
-        onClick={props.transactionClick} 
-        className="debit">
-        Debit
-      </button>
-      <button 
-        onClick={props.transactionClick} 
-        className="deposit">
-        Deposit
-      </button>
+
+      <Button 
+        className={'debit'}
+        clickHander={props.transactionClick}
+        buttonText={'Debit'}
+      />
+
+      <Button 
+        className={'deposit'}
+        clickHander={props.transactionClick}
+        buttonText={'Deposit'}
+      />
     </div>
   )
 
