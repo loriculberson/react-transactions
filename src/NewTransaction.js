@@ -1,6 +1,7 @@
 import React from 'react';
 
 const NewTransaction = (props) => {  
+// const NewTransaction = ({name, amount, handleName, handleAmount, transactionClick}) => {  
 
   return (
     <div className="newTransactions">

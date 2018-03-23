@@ -1,8 +1,7 @@
-
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import NewTransaction from './NewTransaction'
+import NewTransaction from './NewTransaction';
+import Transaction from './Transaction';
 
 function safeRound(amount) {
   return Math.floor(Number(amount)*100)/100
@@ -86,10 +85,15 @@ class App extends Component {
   };
 
   render() {
+
+//
     const renderTransactions = this.state.transactions.map(txn => (
-      <div key={txn.id} className="transactions">
-        {txn.transactionType} of ${txn.amount} for {txn.name}
-      </div>
+      <Transaction 
+        key={txn.id}
+        name={txn.name}
+        amount={txn.amount}
+        transactionType={txn.transactionType}
+      />
     ));
 
     if (!this.state.currentBalance) {
@@ -107,14 +111,19 @@ class App extends Component {
             <h3> The Account Balance is: ${this.state.currentBalance.toFixed(2)} </h3>
             < NewTransaction 
               name={this.state.newTransaction.name} 
-              amount={this.state.newTransaction.amount}
+              amount={this.state.newTransaction.amount} 
+              newTransaction={this.state.newTransaction}
               handleName={this.handleName}
               handleAmount={this.handleAmount}
               transactionClick={this.transactionClick}
             />
-    
-            {renderTransactions}
+           {/* <Transaction 
+            allTransactions={this.state.transactions}
+          /> */}
+
+          {renderTransactions}
           </div>
+     
         </div>
       );
     }
