@@ -7,30 +7,29 @@ const NewTransaction = (props) => {
 
   return (
     <div className="newTransactions">
-    <TransactionInput 
-      label={"Name"}
-      transactionValue={props.name}
-      stateHandler={props.handleName}
-      type={"text"}
-    />
+      <TransactionInput 
+        label={"Name"}
+        transactionValue={props.name}
+        stateHandler={props.handleName}
+        type={"text"}
+      />
 
-    <TransactionInput 
-      label={"Amount"}
-      transactionValue={props.amount}
-      stateHandler={props.handleAmount}
-      type={"text"}
-    />
-
+      <TransactionInput 
+        label={"Amount"}
+        transactionValue={props.amount}
+        stateHandler={props.handleAmount}
+        type={"text"}
+      />
       <button 
-              onClick={props.transactionClick} 
-              className="debit">
-              Debit
-            </button>
-            <button 
-              onClick={props.transactionClick} 
-              className="deposit">
-              Deposit
-              </button>
+        onClick={props.transactionClick} 
+        className="debit">
+        Debit
+      </button>
+      <button 
+        onClick={props.transactionClick} 
+        className="deposit">
+        Deposit
+      </button>
     </div>
   )
 

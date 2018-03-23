@@ -8,6 +8,7 @@ const TransactionInput = (props) => {
         <input
           value={props.transactionValue}
           onChange={props.stateHandler}
+          type={props.type}
         />
       </label>
 
